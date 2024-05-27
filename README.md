@@ -21,6 +21,9 @@ cd ~/h2-db/h2/bin
 
 
 ### 실행결과
+- 접속하기 
+```http://localhost:8082```
+
 로그인 화면 
 ![img_1.png](img_1.png)
 
