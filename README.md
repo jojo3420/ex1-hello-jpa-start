@@ -17,7 +17,7 @@ cd ~/h2-db/h2/bin
 ./h2.sh 
 ``` 
 2) editor 에서 h2.sh 실행
-![img.png](img.png)
+![img.png](study-resource/img.png)
 
 
 ### 실행결과
@@ -25,7 +25,7 @@ cd ~/h2-db/h2/bin
 ```http://localhost:8082```
 
 로그인 화면 
-![img_1.png](img_1.png)
+![img_1.png](study-resource/img_1.png)
 
 로그인 완료 
-![img_2.png](img_2.png)
+![img_2.png](study-resource/img_2.png)
