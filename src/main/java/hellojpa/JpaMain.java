@@ -1,6 +1,7 @@
 package hellojpa;
 
 import hellojpa.entity.MemberEntity;
+import hellojpa.entity.TeamEntity;
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,19 +23,21 @@ public class JpaMain {
 //            em.persist(teamEntity);
 //
 //
-//            MemberEntity memberEntity = new MemberEntity();
-//            memberEntity.setUserName("joel1");
-//            memberEntity.setTeamId(teamEntity.getTeamId());
-//            em.persist(memberEntity);
+            TeamEntity aTeam = em.find(TeamEntity.class, 1L);
 
 
+            MemberEntity memberEntity = new MemberEntity();
+            memberEntity.setUserName("nari");
+            memberEntity.setTeamEntity(aTeam);
+            em.persist(memberEntity);
+
+            // 단방향 매핑 관계: 즉 MemberEntity에서 TeamEntity로의 참조만 가능
             MemberEntity findMember = em.find(MemberEntity.class, 1L);
             System.out.println("findMember.getUserName() = " + findMember.getUserName());
-            System.out.println("findMember = " + findMember);
             System.out.println("findMember.getTeamEntity().getTeamName() = " + findMember.getTeamEntity().getTeamName());
-//            TeamEntity findTeam = em.find(TeamEntity.class, findMember.getTeamId());
-//            System.out.println("findTeam.getTeamName() = " + findTeam.getTeamName());
 
+            TeamEntity teamEntity = em.find(TeamEntity.class, 1L);
+            teamEntity.getMembers().forEach(m -> System.out.println("m.getUserName() = " + m.getUserName()));
 
 
             tx.commit();

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "team")
 @Getter
@@ -21,5 +23,9 @@ public class TeamEntity {
 
     @Column(name = "team_name")
     private String teamName;
+
+    // 양방향 매핑 관계: 즉 TeamEntity에서 MemberEntity로의 참조 가능
+    @OneToMany(mappedBy = "teamEntity")
+    private List<MemberEntity> members;
 
 }

@@ -27,7 +27,7 @@ public class MemberEntity {
 //    @Column(name = "team_id")
 //    private Long teamId;
 
-
+    // 연관관계 매핑에서 주인 역할을 함!
     // Member : N, Team : 1 관계 이므로 MemberEntity Many, TeamEntity One
     @ManyToOne
     @JoinColumn(name = "team_id") // join column name
